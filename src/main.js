@@ -28,7 +28,7 @@ window.onload = async() => {
 
     // 使用者按下「登入」後，頁面轉到 Universal Login
     await auth0.loginWithRedirect({
-      redirect_uri: window.location.origin
+      redirect_uri: window.location.origin + location.pathname
     });
 
   };
@@ -36,7 +36,7 @@ window.onload = async() => {
   // 登出的 function
   const logout = () => {
     auth0.logout({
-      returnTo: window.location.origin
+      returnTo: window.location.origin + location.pathname
     });
   };
 
@@ -50,12 +50,13 @@ window.onload = async() => {
 
   // 登入後的當下，把網址中的參數替換掉
   const query = window.location.search;
+  const pathname = window.location.pathname;
   if(query.includes("code=") && query.includes("state=")) {
     // 執行登入後的動作
     await auth0.handleRedirectCallback();
 
     // 清掉網址參數
-    window.history.replaceState({}, document.title, "/");
+    window.history.replaceState({}, document.title, pathname);
   }
 
   // 確認是否登入，執行頁面的切換
@@ -74,10 +75,6 @@ const updateUI = async() => {
     // 登入後，要做什麼
     let accessToken = await auth0.getTokenSilently(); // 取得 access_token
     let user = await auth0.getUser(); // 取得登入者資訊
-
-    console.log('accessToken: ' + accessToken)
-    console.log('userProfile: ')
-    console.log(user)
 
     // 隱藏登入區塊
     const loginWrap = document.querySelector('.card-wrap.log');
