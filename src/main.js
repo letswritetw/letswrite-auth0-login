@@ -3,7 +3,7 @@ import createAuth0Client from '@auth0/auth0-spa-js';
 
 let auth0 = null;
 
-const fetchAuthConfig = () => fetch("/auth_config.json");
+const fetchAuthConfig = () => fetch("./auth_config.json");
 
 // 取得 config，並將 auth0 初始化
 const configureClient = async () => {
