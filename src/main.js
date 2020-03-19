@@ -28,7 +28,7 @@ window.onload = async() => {
 
     // 使用者按下「登入」後，頁面轉到 Universal Login
     await auth0.loginWithRedirect({
-      redirect_uri: window.location.origin + location.pathname
+      redirect_uri: window.location.origin // 要跟後台的 Callback URL 網域相同
     });
 
   };
