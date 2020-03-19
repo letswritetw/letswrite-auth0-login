@@ -1,0 +1,68 @@
+- var link = 'letswrite-auth0-login'
+- var title = "加入成為 Let's Write 首批會員"
+- var description = "用Auth0的Universal Login功能，來進行Let's Write的會員註冊、登入"
+
+<!DOCTYPE html>
+html(lang="zh-TW")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    title #{title} - Augustus - Let's Write
+
+    link(rel="canonical", href=`https://letswritetw.github.io/${link}/`)
+    meta(property="og:url", content=`https://letswritetw.github.io/${link}/`)
+
+    meta(property="fb:app_id", content="2435108729902508")
+    meta(property="og:type", content="website")
+
+    meta(property="og:site_name", content="Let's Write")
+    meta(property="og:title", content=`${title} - Augustus - Let's Write`)
+    meta(itemprop="name", content=`${title} - Augustus - Let's Write`)
+
+    meta(name="description", content=description)
+    meta(property="og:description", content=description)
+    meta(itemprop="description", content=description)
+
+    meta(itemprop="image", content=`https://letswritetw.github.io/${link}/fb.jpg`)
+    meta(property="og:image", content=`https://letswritetw.github.io/${link}/fb.jpg`)
+    meta(property="og:image:width", content="1200")
+    meta(property="og:image:height", content="630")
+    meta(property="og:image:alt", content=title)
+
+    link(rel="shortcut icon", href="https://i0.wp.com/letswrite.tw/wp-content/uploads/2019/07/cropped-letswrite512-1.jpg")
+
+    //- css
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css")
+    link(rel="stylesheet", href="dist/style.min.css")
+
+    // Google Tag Manager
+    script.
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-PGQ9WQT');
+  body
+
+    // Google Tag Manager (noscript)
+    noscript
+      iframe(src="https://www.googletagmanager.com/ns.html?id=GTM-PGQ9WQT", height="0", width="0", style="display:none;visibility:hidden")
+    
+    #app.container.w-480
+      .title.text-center
+        h1 加入成為 Let's Write 首批會員
+        h2 首批加入會員的人，可以得到 我的掌聲 乙次
+        
+      hr
+
+      //- 未登入
+      section.card-wrap.log
+        button#login.btn(type="button") 登入 / 註冊
+      
+      //- 登入後
+      main.card-wrap.logged.d-none
+        .text-center
+          button#logout.btn(type="button") 登出
+          
+    script(src="dist/main.min.js")

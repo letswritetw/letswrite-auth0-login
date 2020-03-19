@@ -1,0 +1,16 @@
+{
+  "name": "letswrite-auth-login",
+  "version": "1.0.0",
+  "description": "Demo：[demo](https://letswritetw.github.io/XXX/)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@auth0/auth0-spa-js": "^1.6.4",
+    "@babel/polyfill": "^7.8.7"
+  }
+}
