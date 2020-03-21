@@ -51,6 +51,7 @@ window.onload = async() => {
   // 登入後的當下，把網址中的參數替換掉
   const query = window.location.search;
   const pathname = window.location.pathname;
+
   if(query.includes("code=") && query.includes("state=")) {
     // 執行登入後的動作
     await auth0.handleRedirectCallback();
@@ -74,7 +75,7 @@ const updateUI = async() => {
 
     // 登入後，要做什麼
     let accessToken = await auth0.getTokenSilently(); // 取得 access_token
-    let user = await auth0.getUser(); // 取得登入者資訊
+    const user = await auth0.getUser(); // 取得登入者資訊
 
     // 隱藏登入區塊
     const loginWrap = document.querySelector('.card-wrap.log');
