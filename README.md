@@ -2,4 +2,4 @@
 
 [點此 註冊、登入 會員](https://letswritetw.github.io/letswrite-auth0-login/)
 
-[筆記文](https://letswrite.tw/auth0-login/)
+[筆記文](https://www.letswrite.tw/auth0-login/)
